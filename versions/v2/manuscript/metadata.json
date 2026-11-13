@@ -1,0 +1,23 @@
+{
+  "id": "koljancic-oblak-2026-question-5-11-even-loop-path",
+  "revision": 2,
+  "problem_ids": [
+    "koljancic-oblak-2026-question-5-11-even-loop-path"
+  ],
+  "topic": "Question 5.11 on non-symmetric Strong Spectral Property for even looped double paths",
+  "title": "Koljančić–Oblak Question 5.11 (arXiv:2604.21552v1, Section 5): nSSP witnesses for looped double paths",
+  "creators": [
+    {
+      "name": "Ma, Haobo",
+      "affiliation": "ChronoAI Pte Ltd, Singapore"
+    },
+    {
+      "name": "Zhang, Wenlin",
+      "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore"
+    }
+  ],
+  "abstract": "Question 5.11 of Koljančić and Oblak (arXiv:2604.21552v1, Section 5; journal p. 776) has an affirmative answer: every even double path with a nonempty loop set allows the non-symmetric Strong Spectral Property. We construct a symmetric one-loop witness using coprime branch continuants and prove injectivity of its characteristic-polynomial differential. Openness then supplies every prescribed nonempty loop set. The same argument gives a complete existence criterion in odd order: at least one loop must lie at an odd-numbered vertex. The witnesses can be chosen symmetric with positive integer nonzero entries. Carptopus (19 August 2026) previously proved the full existence criterion and its single-loop spectral characterization. We give an explicit integer construction, an arithmetic criterion for unit edge weights, and the three-way classification for the central-loop and interior-loop families.",
+  "summary": "The allowing criterion is nonempty loops in even order and an odd-numbered loop in odd order, with symmetric positive-integer witnesses. The earlier proof is credited to Carptopus (19 August 2026). Unit edge weights with one loop at ell give nSSP exactly when gcd(ell,n+1)=1. Central-loop and interior-loop families receive full three-way classifications.",
+  "license": "cc-by-4.0",
+  "evidence_url": "https://github.com/the-omega-institute/trureturing/blob/b260643d3d496ad9cd04bfc3557fc9b7499de976/D5/S3/Combinatorics/SpectralGraph/KoljancicOblakEvenPathNSSP.lean"
+}

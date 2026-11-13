@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this work, cite it."
+title: "Koljančić–Oblak Question 5.11 (arXiv:2604.21552v1, Section 5): nSSP witnesses for looped double paths"
+authors:
+  - name: "Haobo Ma"
+  - name: "Wenlin Zhang"
+date-released: "2026-11-05"
+version: "2"
+url: "https://mathesis-omega-research.apps.chrono-ai.fun/papers/koljancic-oblak-2026-question-5-11-even-loop-path?version=2"
+doi: "10.5281/zenodo.23920568"
+license: "CC-BY-4.0"

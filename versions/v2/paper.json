@@ -1,0 +1,62 @@
+{
+  "files": {
+    "pdf": {
+      "bytes": 86203,
+      "matches_public": null,
+      "path": "paper.pdf",
+      "public_sha256": null,
+      "sha256": "f4926754b9bdfa14458a7b888ba5cb54ae24806fb067d0d740685602e5e35062"
+    },
+    "source": {
+      "bytes": 21819,
+      "matches_public": null,
+      "path": "manuscript/",
+      "public_sha256": null,
+      "sha256": "96421268e1b7be2fd1d42a02285a6c123bf650b646133daef546dbd00f47d090"
+    }
+  },
+  "source_identity": "Mathesis public projection",
+  "work": {
+    "abstract_text": "Question 5.11 of Koljančić and Oblak (arXiv:2604.21552v1, Section 5; journal p. 776) has an affirmative answer: every even double path with a nonempty loop set allows the non-symmetric Strong Spectral Property. We construct a symmetric one-loop witness using coprime branch continuants and prove injectivity of its characteristic-polynomial differential. Openness then supplies every prescribed nonempty loop set. The same argument gives a complete existence criterion in odd order: at least one loop must lie at an odd-numbered vertex. The witnesses can be chosen symmetric with positive integer nonzero entries. Carptopus (19 August 2026) previously proved the full existence criterion and its single-loop spectral characterization. We give an explicit integer construction, an arithmetic criterion for unit edge weights, and the three-way classification for the central-loop and interior-loop families.",
+    "authors": [
+      {
+        "affiliation": "ChronoAI Pte Ltd, Singapore",
+        "name": "Haobo Ma"
+      },
+      {
+        "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+        "name": "Wenlin Zhang"
+      }
+    ],
+    "concept_doi": "10.5281/zenodo.23920567",
+    "current_version": 2,
+    "doi": "10.5281/zenodo.23920568",
+    "lean_source": {
+      "revision": "b260643d3d496ad9cd04bfc3557fc9b7499de976",
+      "url": "https://github.com/the-omega-institute/trureturing/blob/b260643d3d496ad9cd04bfc3557fc9b7499de976/D5/S3/Combinatorics/SpectralGraph/KoljancicOblakEvenPathNSSP.lean"
+    },
+    "license": "CC-BY-4.0",
+    "msc": [],
+    "pdf": {
+      "url": "/api/v1/collected-papers/koljancic-oblak-2026-question-5-11-even-loop-path/files/pdf?version=2"
+    },
+    "previous_version": null,
+    "publication": "public",
+    "published_on": "2026-11-05T08:03:36.967641991Z",
+    "record": "koljancic-oblak-2026-question-5-11-even-loop-path",
+    "repository_name": "6aec3858e584399ee16a1b5a",
+    "source": {
+      "url": "/api/v1/collected-papers/koljancic-oblak-2026-question-5-11-even-loop-path/files/source?version=2"
+    },
+    "title": "Koljančić–Oblak Question 5.11 (arXiv:2604.21552v1, Section 5): nSSP witnesses for looped double paths",
+    "versions": [
+      {
+        "previous_version": null,
+        "published_on": "2026-11-05T08:03:36.967641991Z",
+        "revision": "2",
+        "version": 2
+      }
+    ],
+    "work": "koljancic-oblak-2026-question-5-11-even-loop-path"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "schema": "mathesis.materials.v1",
+  "work": "koljancic-oblak-2026-question-5-11-even-loop-path",
+  "version": 2,
+  "repository_url": "https://github.com/mathesis-papers/6aec3858e584399ee16a1b5a",
+  "site_url": "https://papers.trureturing.org/6aec3858e584399ee16a1b5a/",
+  "doi": "10.5281/zenodo.23920568",
+  "reading": {
+    "en": "https://papers.trureturing.org/6aec3858e584399ee16a1b5a/en/",
+    "zh": "https://papers.trureturing.org/6aec3858e584399ee16a1b5a/zh/"
+  },
+  "slides": [],
+  "visualizations": []
+}

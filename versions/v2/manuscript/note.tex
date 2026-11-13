@@ -1,0 +1,457 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=27mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,array,longtable}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[colorlinks=true,allcolors=blue,breaklinks=true]{hyperref}
+\setlength{\emergencystretch}{1em}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\R}{\mathbb R}
+\newcommand{\N}{\mathbb N}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\supp}{\operatorname{supp}}
+\title{Koljan\v{c}i\'c--Oblak Question 5.11\\
+(arXiv:2604.21552v1, Section 5):\\
+nSSP witnesses for looped double paths}
+\author{Haobo Ma\\\small ChronoAI Pte Ltd, Singapore
+\and Wenlin Zhang\\\small National University of Singapore\\
+\small ChronoAI Pte Ltd, Singapore}
+\date{November 2, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+Question 5.11 of Koljan\v{c}i\'c and Oblak
+(arXiv:2604.21552v1, Section 5; journal p.~776) has an affirmative answer:
+every even double path
+with a nonempty loop set allows the non-symmetric Strong Spectral
+Property. We construct a symmetric one-loop witness using coprime
+branch continuants and prove injectivity of its characteristic-polynomial
+differential. Openness then supplies every prescribed nonempty loop set.
+The same argument gives a complete existence criterion in odd order:
+at least one loop must lie at an odd-numbered vertex. The witnesses can
+be chosen symmetric with positive integer nonzero entries. Carptopus
+(19 August 2026) previously proved the full existence criterion and its
+single-loop spectral characterization. We give an explicit integer
+construction, an arithmetic criterion for unit edge weights, and the
+three-way classification for the central-loop and interior-loop families.
+\end{abstract}
+
+\section{The question and the result}
+Write $[n]=\{1,\ldots,n\}$, with $n\geq1$. The double path
+$P_{n,L}$ has both arcs between consecutive vertices and exactly the
+loops at $L\subseteq[n]$. Following Definitions 1.1, 1.3 and 1.5 of
+\cite{KO}, a real matrix $A$ has nSSP when
+\begin{equation}\label{eq:test}
+ A\circ X=0,\qquad AX^{\mathsf T}=X^{\mathsf T}A
+ \quad\Longrightarrow\quad X=0\qquad(X\in\R^{n\times n}).
+\end{equation}
+The product $\circ$ is entrywise. A pattern \emph{allows} nSSP if some
+matrix with exactly that support has nSSP; it \emph{requires} nSSP if
+every such matrix does. No symmetry or diagonal condition is imposed on
+the test matrix $X$.
+
+Question 5.11 of \cite{KO} is the even-order existence question.
+Its answer follows from the following stronger statement.
+\begin{theorem}\label{thm:main}
+The double path $P_{n,L}$ allows nSSP if and only if
+\[
+ \begin{cases}
+ L\ne\varnothing,&n\text{ even},\\
+ L\cap\{1,3,\ldots,n\}\ne\varnothing,&n\text{ odd}.
+ \end{cases}
+\]
+Whenever it allows nSSP, it has a symmetric nSSP witness whose nonzero
+entries are positive integers.
+\end{theorem}
+Our focus is existence, not the universal classification in Problem 1.6
+of \cite{KO}. In particular, the negative requiring examples there
+are compatible with Theorem~\ref{thm:main}. The odd-order obstruction
+is already Theorem 5.7(Cc) of that paper; we include its short linear
+algebra proof to make the criterion self-contained.
+Carptopus \cite[Theorems 4.1, 5.2 and 6.1]{C} gave an earlier proof of
+both parity cases, dated 19 August 2026 and revised 22 August 2026.
+The sufficient direction uses the same separation of continuant
+variations into their two parities. The construction below fixes the
+branch scaling explicitly and retains the positive-integer conclusion
+after every loop enlargement. For context, disjoint branch spectra also
+appear in the three-spectra Jacobi reconstruction theorem of
+Michor and Teschl \cite[Theorem 2.1]{MT}; here the argument establishes
+the required differential directly.
+Vander Meulen's ILAS 2026 abstract, reporting joint work with Cavers
+and Li \cite[p.~71]{VM}, announces a general sign-pattern
+characterization; the abstract does not give its hypotheses or proof.
+
+\section{Continuants and their differential}
+For positive squared edge weights $q_0,q_1,\ldots$, put
+\begin{equation}\label{eq:rec}
+ P_0=1,\quad P_1=x,\quad
+ P_{k+2}=xP_{k+1}-q_kP_k.
+\end{equation}
+For a branch of $m$ vertices, the first $m-1$ weights describe its
+internal edges; $q_{m-1}$ describes the edge attaching it to a central
+vertex. The polynomial $P_m$ is monic of degree $m$ and has parity $m$.
+For a variation of the $q_k$, denote differentiation by a dot. Then
+$\dot P_0=\dot P_1=0$ and
+\begin{equation}\label{eq:drec}
+ \dot P_{k+2}=x\dot P_{k+1}-\dot q_kP_k-q_k\dot P_k.
+\end{equation}
+Thus $\deg\dot P_m\leq m-2$ for $m\geq2$, and $\dot P_m$ has parity
+$m$; zero polynomials satisfy all the degree bounds below.
+These assertions follow directly by induction in \eqref{eq:rec}
+and \eqref{eq:drec}.
+
+\begin{lemma}\label{lem:recover}
+If $q_0,\ldots,q_{m-1}\ne0$ and
+$\dot P_m=\dot P_{m+1}=0$, then every
+$\dot q_0,\ldots,\dot q_{m-1}$ vanishes.
+\end{lemma}
+\begin{proof}
+For $m=0$ there is nothing to prove. For $m\geq1$, the recurrence gives
+$\dot q_{m-1}P_{m-1}+q_{m-1}\dot P_{m-1}=0$.
+Its coefficient of $x^{m-1}$ is $\dot q_{m-1}$, by monicity and the
+strict degree bound. Hence $\dot q_{m-1}=0$ and, since
+$q_{m-1}\ne0$, also $\dot P_{m-1}=0$. Descend in $m$.
+\end{proof}
+
+Choose a loop vertex $\ell$, and put $r=\ell-1$, $s=n-\ell$.
+Use two copies $P_k,Q_k$ of \eqref{eq:rec}, reading each branch from
+its far endpoint toward the loop. Let $U=P_r$, $V=Q_s$.
+The symmetric path matrix with loop value $a\ne0$ and edge weights
+equal to the positive square roots of the parameters has characteristic
+polynomial
+\begin{equation}\label{eq:joined}
+ H=P_{r+1}V+UQ_{s+1}-(x+a)UV.
+\end{equation}
+Indeed, expansion at the central vertex gives
+$(x-a)UV-q_{r-1}P_{r-1}V-p_{s-1}UQ_{s-1}$, with a branch term
+omitted when its length is zero. Substitution of \eqref{eq:rec}
+gives \eqref{eq:joined}; in particular the formula includes empty branches.
+
+\begin{lemma}\label{lem:joined}
+If $a\ne0$, $U,V$ are coprime and all the edge parameters are nonzero, then
+$\dot H=0$ forces $\dot a=0$ and every edge-parameter variation to vanish.
+\end{lemma}
+\begin{proof}
+Set $T=\dot U V+U\dot V$. Differentiating \eqref{eq:joined} gives
+\[
+ \dot H=W-aT-\dot aUV,
+\]
+where
+\[
+ W=\dot P_{r+1}V+P_{r+1}\dot V+
+       \dot UQ_{s+1}+U\dot Q_{s+1}-xT.
+\]
+Every term of $W$ has parity $r+s+1$, whereas $T$ and $UV$ have
+parity $r+s$. The even and odd parts of $\dot H=0$ therefore give
+$aT+\dot aUV=0$ and $W=0$. The coefficient of $x^{r+s}$ in the first
+identity gives $\dot a=0$, because $UV$ is monic and
+$\deg T<r+s$. Since $a\ne0$, $T=0$.
+
+Coprimality now gives $U\mid\dot U$ and $V\mid\dot V$.
+The bounds $\deg\dot U<\deg U$ and
+$\deg\dot V<\deg V$ force $\dot U=\dot V=0$.
+Consequently $W=0$ reduces to
+\[
+ \dot P_{r+1}V+U\dot Q_{s+1}=0.
+\]
+The same divisibility argument, using
+$\deg\dot P_{r+1}<r$ and $\deg\dot Q_{s+1}<s$, gives
+$\dot P_{r+1}=\dot Q_{s+1}=0$.
+For a zero-length branch these variations are identically zero, so
+the argument still applies with its constant polynomial $1$.
+Lemma~\ref{lem:recover} finishes both branches.
+\end{proof}
+This parity argument applies whenever the branches are coprime.
+
+\section{Choosing the branches and proving nSSP}
+\begin{lemma}\label{lem:choose}
+If at least one of $r,s$ is even, the branches can be chosen with
+positive integer edge weights and coprime characteristic polynomials.
+\end{lemma}
+\begin{proof}
+An empty branch has polynomial $1$, so suppose both are nonempty.
+Choose an even branch of length $d\geq2$. Give all its internal edges,
+and its attaching edge, weight $M=d+1$; give the other branch all weights
+$1$. The $d$ eigenvalues of a zero-diagonal path with constant weight
+$M$ are
+$2M\cos(j\pi/(d+1))$, $1\leq j\leq d$.
+This formula follows by substituting the vectors with coordinates
+$\sin(ij\pi/(d+1))$ in the three-term matrix equation; the displayed
+eigenvalues are distinct and hence exhaust its spectrum.
+For even $d$, their least absolute value is
+\[
+ 2(d+1)\sin\!\left(\frac{\pi}{2(d+1)}\right)>2,
+\]
+using $\sin t>2t/\pi$ for $0<t<\pi/2$.
+Every eigenvalue of the other, unit-weight branch has absolute value
+less than $2$ by the same formula. The spectra are disjoint. Since
+both characteristic polynomials split over $\R$, they are coprime.
+\end{proof}
+
+Let $A$ be the resulting symmetric one-loop matrix, with $a=1$.
+All its adjacent entries are nonzero. Such a tridiagonal matrix has
+simple spectrum: its first coordinate determines an eigenvector
+recursively from the first row onward, and a zero first coordinate
+forces the entire vector to vanish. Every eigenspace therefore has
+dimension at most one; the real symmetric spectral theorem then gives
+an orthogonal matrix $O$ with
+$O^{\mathsf T}AO=\diag(\lambda_1,\ldots,\lambda_n)$ and distinct
+$\lambda_i$.
+
+Let $\mathcal S$ be the $n$-dimensional real space of symmetric
+matrices supported on the $n-1$ path edges and the chosen loop.
+Consider
+\begin{equation}\label{eq:readout}
+ B\longmapsto\diag(O^{\mathsf T}BO)\in\R^n,
+ \qquad B\in\mathcal S.
+\end{equation}
+This map is injective. To see this, suppose its output is zero.
+For every $x$, the derivative at $t=0$ of
+$\det(xI-A-tB)$ is
+\[
+ -\sum_i (O^{\mathsf T}BO)_{ii}\prod_{j\ne i}(x-\lambda_j)=0;
+\]
+the formula follows by multilinearity of the determinant at a diagonal
+matrix. Thus $\dot H=0$. An edge variation $\dot b$ gives the squared
+parameter variation $\dot q=2b\dot b$; since $b\ne0$,
+Lemma~\ref{lem:joined} forces $B=0$. Equal dimensions make
+\eqref{eq:readout} surjective as well.
+
+Now let an unrestricted real $X$ satisfy \eqref{eq:test}.
+The matrix $Y=O^{\mathsf T}X^{\mathsf T}O$ commutes with
+$\diag(\lambda_i)$, so its $(i,j)$ entry is zero for $i\ne j$.
+Write $Y=\diag(y_1,\ldots,y_n)$.
+For every $B\in\mathcal S$, entrywise annihilation gives
+$\tr(X^{\mathsf T}B)=\sum_{ij}X_{ij}B_{ij}=0$.
+Choose $B$ whose output in \eqref{eq:readout} is $(y_i)$.
+Invariance of trace under conjugation yields
+\[
+ 0=\tr\bigl(YO^{\mathsf T}BO\bigr)=\sum_i y_i^2.
+\]
+Hence $Y=0$ and $X=0$. This proves nSSP for the one-loop witness
+without assuming symmetry of $X$.
+
+\begin{corollary}\label{cor:spectral}
+For a real symmetric irreducible tridiagonal matrix with exactly one
+nonzero diagonal entry, at $\ell$, nSSP holds if and only if the
+two branches obtained by deleting $\ell$ have disjoint spectra.
+In particular, if every edge has weight $1$ and the loop has any
+nonzero value, then nSSP holds exactly when $\gcd(\ell,n+1)=1$.
+\end{corollary}
+\begin{proof}
+The sufficient direction was proved above and is unchanged for signed
+nonzero edges, whose squares are positive. For necessity, take a common
+branch eigenvalue $\mu$. Branch eigenvectors have nonzero attaching
+coordinates; rescale them so that the two attaching contributions
+cancel. Their union, with zero at $\ell$, is a nonzero vector $z$ with
+$Az=\mu z$. Let $S$ be the alternating diagonal sign matrix. The
+zero-diagonal part $J=A-aE_{\ell\ell}$ satisfies $SJ=-JS$;
+since $z_\ell=0$, also
+$A(Sz)=-\mu Sz$. Thus the nonzero symmetric matrix
+$X=zz^{\mathsf T}+(Sz)(Sz)^{\mathsf T}$ commutes with $A$.
+Its entries at path edges and at $(\ell,\ell)$ vanish, so it
+violates nSSP. This is the obstruction in \cite[Theorem 4.1]{C}.
+For unit edges, the branch eigenvalues are
+$2\cos(j\pi/\ell)$, $1\leq j<\ell$, and
+$2\cos(k\pi/(n+1-\ell))$, $1\leq k<n+1-\ell$.
+Since cosine is injective on $(0,\pi)$, a common value exists exactly
+when $\gcd(\ell,n+1-\ell)>1$. An empty branch has no eigenvalues,
+and the same criterion gives $\gcd(\ell,n+1)=1$ at either endpoint.
+\end{proof}
+
+\section{Loop enlargement, obstructions and consequences}
+The nSSP condition is open as a condition on $A$. Indeed it says that
+the linear map
+\[
+ F_A:X\longmapsto (A\circ X,\ AX^{\mathsf T}-X^{\mathsf T}A)
+\]
+is injective. In fixed bases this is full column rank, witnessed by a
+nonzero maximal minor, and the entries of its matrix depend continuously
+on $A$. Write $A_0$ for the integer one-loop witness and
+$D=\sum_{j\in L\setminus\{\ell\}}E_{jj}$, where $E_{jj}$ has a single
+unit diagonal entry. For every sufficiently large positive integer $N$,
+$A_0+N^{-1}D$ has nSSP by openness. Since $F_{cA}=cF_A$ for $c\ne0$,
+\[
+ A_N=NA_0+D
+\]
+is a symmetric nSSP witness with exactly the required support and
+positive integer nonzero entries.
+
+If $n$ is even, $r+s=n-1$ is odd, so one branch is even for every
+choice of loop. If $n$ is odd and $\ell$ is odd, both branches are even.
+Thus the preceding construction proves the sufficiency assertions of
+Theorem~\ref{thm:main}, including $n=1$ (the matrix $(1)$).
+
+For necessity, if $L=\varnothing$, $X=I$ violates nSSP for every
+matrix of the pattern. If $n=2k+1$ and all loops lie at even vertices,
+order the odd vertices first and write an arbitrary matrix of the
+pattern as
+\[
+ A=\begin{pmatrix}0&B\\ C&D\end{pmatrix},\qquad
+ B\in\R^{(k+1)\times k},\ C\in\R^{k\times(k+1)}.
+\]
+There exist nonzero vectors $u,v\in\R^{k+1}$ with $Cu=0$ and
+$v^{\mathsf T}B=0$. Extend them by zero on the even vertices.
+Then $Au=0$ and $v^{\mathsf T}A=0$. The nonzero matrix
+$X=vu^{\mathsf T}$ is supported on odd--odd positions, where $A$ is
+zero, and $X^{\mathsf T}=uv^{\mathsf T}$ commutes with $A$.
+This is the obstruction of \cite[Theorem 5.7(Cc)]{KO}, and completes
+the proof of Theorem~\ref{thm:main}.
+
+\begin{corollary}\label{cor:siblings}
+For odd $n\geq3$, a double path with its sole loop at the central
+vertex allows but does not require nSSP when $n\equiv1\pmod4$,
+and does not allow nSSP when $n\equiv3\pmod4$.
+For every $n\geq4$, the path with loops at all interior vertices
+allows but does not require nSSP; for $1\leq n\leq3$ it does not allow nSSP.
+The pattern with $n=1$ and its one loop requires nSSP.
+Every directed superpattern of an allowing path also allows nSSP,
+with a positive-integer witness.
+\end{corollary}
+\begin{proof}
+The central vertex $(n+1)/2$ is odd exactly in the first congruence
+class. In either odd class with $n\geq3$, the unit-edge matrix has
+$\gcd((n+1)/2,n+1)>1$ and fails nSSP by
+Corollary~\ref{cor:spectral}, proving nonrequirement.
+For odd $n\geq5$, the interior contains the odd vertex $3$;
+the even case needs only a nonempty loop set, whereas for $n=3$
+the sole interior vertex is even. For $n=1,2$ the interior-loop set
+is empty. To see nonrequirement for the
+interior-loop family, let $C$ be the unit-edge path matrix with
+unit loops at both endpoints, and let $E$ have every entry equal to $1$.
+Every row and column sum of $C$ is $2$, so $CE=EC$.
+Put $B=I-C$ and $Y=I-E+C$. Then $B$ has exactly the interior-loop
+pattern, $Y\ne0$ for $n\geq3$, $B\circ Y=0$, and $BY=YB$.
+This is also the construction behind \cite[Theorem 5.7(A)]{KO}.
+The one-dimensional assertion follows directly from \eqref{eq:test}.
+For a superpattern, let $D$ have value $1$ at every additional arc
+and zero elsewhere. The same openness and scaling argument gives
+$NA_0+D$ for all sufficiently large integers $N$.
+\end{proof}
+The last assertion is also a consequence of the stronger, similarity-
+preserving Superpattern Lemma, \cite[Lemma 1.2]{KO}; see also
+\cite[Theorem 5.4]{F} for its non-symmetric form.
+
+\section{Source coverage and verification}
+In the following table, ``proved'' refers to the written arguments
+above; ``prior proof cited'' identifies results used with their original
+scope. The allowing classification is also \cite[Theorem 6.1]{C}.
+{\small
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{.31\linewidth}>{\raggedright\arraybackslash}p{.64\linewidth}@{}}
+\toprule
+Source item in \cite{KO} & Coverage\\ \midrule
+\endfirsthead
+\toprule Source item in \cite{KO} & Coverage\\ \midrule
+\endhead
+Question 5.11, Section 5; journal p.~776 & Proved: every positive even
+order and nonempty loop set (Theorem~\ref{thm:main}); prior proof
+\cite[Corollary 6.2]{C}.\\
+Problem 1.6, allowing & Proved: complete criterion in all orders
+(Theorem~\ref{thm:main}); prior proof \cite[Theorem 6.1]{C}.\\
+Problem 1.6, requiring & Not covered in general; central-loop and
+interior-loop subfamilies are classified in Corollary~\ref{cor:siblings}.\\
+Theorem 5.7(Cc) & Prior proof cited: odd-order obstruction; its
+rank-one proof is included above.\\
+Example 5.8; Theorem 5.7(A) & Proved: interior loops allow but do not
+require nSSP for every $n\geq4$; $1\leq n\leq3$ does not allow it.\\
+Example 5.9 & Proved: the unit-edge witness for $P_{6,\{3\}}$ has
+nSSP because $\gcd(3,7)=1$; the example's signed failure is prior
+proof cited.\\
+Example 5.10; Theorem 5.7(Ca) & Proved: central-loop three-way
+classification for every odd order; unit edges fail for every
+odd $n\geq3$.\\
+Example 5.12; Table 1 & Proved: their allowing boundary agrees
+with Theorem~\ref{thm:main}; the remaining requiring distinctions
+are prior proof cited.\\
+Theorems 5.3, 5.5 and 5.7(B),(Cb); Corollary 5.6 & Prior proof
+cited: the stated requiring families and co-central-loop nonrequirement
+are retained with their original hypotheses.\\
+Lemma 1.2; \cite[Theorem 5.4]{F} & Prior proof cited: the stronger
+similarity-preserving Superpattern Lemma. The positive-integer
+existence consequence is proved above.\\
+Problem 1.8; Problem 2.9 & Not covered: the general minimum-arc
+requiring questions concern all matrices, rather than existence
+of path witnesses.\\
+Reference [1] of \cite{KO}, Problem 6.5 & Prior proof cited: \cite[Example 1.4]{KO}
+already gives the negative answer to the irreducible-tridiagonal
+requiring question.\\
+\bottomrule
+\end{longtable}}
+The written proof above establishes the full criterion and the
+positive-integer and superpattern consequences. The pinned Lean file
+\href{https://github.com/the-omega-institute/trureturing/blob/b260643d3d496ad9cd04bfc3557fc9b7499de976/D5/S3/Combinatorics/SpectralGraph/KoljancicOblakEvenPathNSSP.lean}{even-order Lean source}
+contains the declaration \texttt{result}, whose proposition is precisely
+the even-order existence statement, with unrestricted real test matrices.
+The companion
+\href{https://github.com/the-omega-institute/trureturing/blob/b260643d3d496ad9cd04bfc3557fc9b7499de976/D5/S3/Combinatorics/SpectralGraph/KoljancicOblakEvenPath.lean}{continuant Lean source}
+defines that proposition as \texttt{claim} and provides
+\texttt{branch\_variation\_injective},\allowbreak\ 
+\texttt{joined\_variation\_injective},\allowbreak\ and
+\texttt{joined\_path\_charpoly\_derivative} for the algebraic
+recovery and characteristic-polynomial differential. More precisely,
+the branch-recovery declaration applies to any branch length with
+nonzero edge parameters. The joined-recovery declaration requires
+\texttt{Odd (r + s)}, a nonzero loop and coprime continuants; it covers
+the even-order case. The characteristic-polynomial derivative declaration
+applies to arbitrary branch lengths and real edge and loop variations.
+The proposition \texttt{result} asserts an exact-support real witness.
+Symmetry, positive integrality, the odd-order extension, the unit-edge
+criterion and the nonrequiring constructions are written proofs here.
+The accompanying \texttt{verify.py} checks exact rational ranks for
+all loop sets through order eight and the branch differential through
+order ten. It also checks the unit-edge arithmetic criterion for all
+78 single-loop positions through order twelve, and the explicit
+interior-loop failure for orders three through twelve. These are
+finite checks; the all-orders statements follow from the written proofs.
+
+\paragraph{License.}
+\href{https://creativecommons.org/licenses/by/4.0/}{Creative Commons
+Attribution 4.0 International (CC BY 4.0).}
+
+\begin{thebibliography}{9}
+\bibitem{KO}
+S. Koljan\v{c}i\'c and P. Oblak,
+\emph{Combinatorial aspects of the non-symmetric strong spectral
+property for graphs}, arXiv:2604.21552v1 (2026),
+\href{https://arxiv.org/abs/2604.21552v1}{arXiv version 1}.
+Journal version: \emph{Combinatorial aspects of the nonsymmetric strong
+spectral property for graphs}, Electron. J. Linear Algebra \textbf{42}
+(2026), 755--779,
+\href{https://doi.org/10.13001/ela.2026.10523}{doi:10.13001/ela.2026.10523};
+Question 5.11, p.~776.
+\bibitem{F}
+S. M. Fallat, H. Tracy Hall, J. C.-H. Lin and B. L. Shader,
+\emph{The bifurcation lemma for strong properties in the inverse
+eigenvalue problem of a graph}, Linear Algebra Appl. \textbf{648}
+(2022), 70--87,
+\href{https://doi.org/10.1016/j.laa.2022.04.009}{doi:10.1016/j.laa.2022.04.009}.
+\href{https://arxiv.org/abs/2112.11712v2}{arXiv:2112.11712v2}.
+\bibitem{C}
+Carptopus,
+\emph{Spectral separation and the non-symmetric strong spectral property
+for looped double paths}, 19 August 2026, revised 22 August 2026,
+Theorems 4.1, 5.2 and 6.1 and Corollary 6.2.
+\href{https://raw.githubusercontent.com/Carptopus/MathExplore-Notes/e57ee007380cbc351eb371d8e991303cab5f1e48/research/nssp-looped-double-paths/nssp-looped-double-paths.tex}{Dated original source};
+\href{https://doi.org/10.5281/zenodo.22045508}{doi:10.5281/zenodo.22045508};
+Version 0.2, 22 August 2026,
+\href{https://doi.org/10.5281/zenodo.22059007}{doi:10.5281/zenodo.22059007}.
+\bibitem{MT}
+J. Michor and G. Teschl,
+\emph{Reconstructing Jacobi matrices from three spectra},
+in J. Janas, P. Kurasov and S. Naboko (eds.),
+\emph{Spectral Methods for Operators of Mathematical Physics},
+Operator Theory: Advances and Applications \textbf{154},
+Birkh\"auser, Basel (2004), 151--154,
+\href{https://doi.org/10.1007/978-3-0348-7947-7_9}{doi:10.1007/978-3-0348-7947-7\_9}.
+\href{https://arxiv.org/abs/math/0211051}{arXiv:math/0211051}.
+\bibitem{VM}
+K. N. Vander Meulen,
+\emph{Sign patterns that require or allow the non-symmetric strong
+spectral property}, abstract, joint work with M. Cavers and Z. Li,
+27th Conference of the International Linear Algebra Society (2026), p.~71.
+\href{https://ilas2026.math.vt.edu/docs/ILAS2026-Book-Of-Abstracts.pdf}{Conference abstracts}.
+\end{thebibliography}
+\end{document}

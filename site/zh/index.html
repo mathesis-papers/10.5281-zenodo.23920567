@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Koljančić–Oblak Question 5.11 (arXiv:2604.21552v1, Section 5): nSSP witnesses for looped double paths — Mathesis</title>
+<style>html{color-scheme:light dark}body{max-width:68rem;margin:3rem auto;padding:0 2rem;font:18px/1.7 Georgia,"Noto Serif",serif}header,article{max-width:48rem}h1{font-size:2rem;line-height:1.3;font-weight:500}h2{font-size:1.3rem;margin-top:2rem}a{color:#357053}nav{display:flex;flex-wrap:wrap;gap:.6rem 1.5rem;margin:1.4rem 0}.meta{font:15px/1.6 system-ui,sans-serif}p{overflow-wrap:anywhere}footer{margin-top:3rem;font-size:.9rem}@media(max-width:600px){body{margin:1.5rem auto;padding:0 1.2rem}h1{font-size:1.6rem}}</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],throwOnError:false})"></script>
+</head><body><header><a href="https://papers.trureturing.org/">Mathesis papers</a><h1>Koljančić–Oblak Question 5.11 (arXiv:2604.21552v1, Section 5): nSSP witnesses for looped double paths</h1><p>Haobo Ma, Wenlin Zhang</p></header><nav><a href="../">论文</a></nav><article><p>这篇手稿研究一条链：相邻顶点间有双向箭头，某些顶点还有自环；问题是能否赋予矩阵权重，使其具有强谱非退化性质。Ma和Zhang给出的完整存在条件是：顶点数为偶数时至少有一个自环，为奇数时至少有一个自环位于奇数编号顶点。</p>
+<p>从链的一端依次编号。矩阵仅在箭头和自环对应位置非零，反向箭头的权重不必相等。“非对称强谱性质”简称nSSP，排除这样的障碍：非零实矩阵X在原矩阵A的所有非零位置上均为零，且X的转置与A可交换，即交换乘法顺序不改变结果。X不必对称，对角线也不必为零。问题联系零位置限制与谱行为，而非指定某组特征值。</p>
+<p>模式“允许”nSSP，是说至少一组权重满足它；“必具”则是每组都满足。作者回答了Koljančić与Oblak的偶数阶存在问题，但承认Carptopus在2026年8月已证明奇偶两种情况及单自环谱判据。本文贡献是显式整数构造、单位边权的算术判据及两类自环模式的分类，并非首次存在性证明。凡允许的模式，都有对称且非零元素全为正整数的见证矩阵。</p>
+<p>仅有一个自环时，删掉该顶点，剩下两条短链称为分支。作者证明：对称矩阵的相邻权重非零时，具有nSSP恰好等价于两分支无共同特征值。例如五个顶点、唯一自环在第三个顶点时，单位边权使两分支相同，因此失败。将一侧两条边权设为三，另一侧设为一，自环权重设为一，分支特征值分别为±3和±1，便成功了。因此允许不等于必具。一般地，单位边权成功当且仅当自环位置与顶点总数加一互素，自环权重只须非零。</p>
+<p>证明使用以特征值为根的特征多项式。沿分支添加顶点，可递推得到这些多项式，称为连行列式。分支对角线全零，令每个多项式只含偶次或奇次幂。作者让权重发生无穷小变化，问整体特征多项式能否一阶不变。非零自环将等式分成奇、偶两部分。分支谱无交集，意味着两多项式无公因子，迫使其变化均为零；再沿递推式倒推，所有边权变化也只能为零。</p>
+<p>为得到针对任意X的nSSP，作者利用对称路径矩阵的特征值互异：在特征向量坐标下，可交换矩阵必为对角矩阵。上述微分计算说明，边和自环的变化能独立探测所有对角方向。零位置条件使X与这些变化全部正交，迫使X为零。构造时放大偶数长度分支的权重，使其特征值落在另一分支谱范围之外。再利用nSSP对足够小扰动的稳定性，加入其余所需的正自环；整体放大清除分母，即得正整数权重。</p>
+<p>失败也有结构原因。没有自环时，单位矩阵就是障碍。奇数阶且自环只在偶数顶点时，奇数顶点较多，产生支撑于其上的左、右零特征向量，其外积给出障碍；作者将此归功于Koljančić与Oblak。至少三个顶点的奇数阶链若仅有中心自环，则恰在顶点数除以四余一时允许nSSP，但从不必具。所有内部顶点都有自环的模式，从四阶起允许却非必具；更小阶数不允许。</p>
+<p>所有阶数的结论依靠书面证明。手稿报告的Lean声明针对偶数阶存在精确非零模式的实矩阵见证，允许任意实X；它不涵盖对称性、整数性、奇数阶存在性、单位边权判据及失败构造，分支拼接恢复的形式化也限于偶数总阶数。所报告的精确有理数检查涵盖八阶以内所有自环集合、十阶以内分支微分、十二阶以内全部78个单自环位置，以及三至十二阶的内部自环失败例。这些有限检查不能证明无限结论。意义在于构造性的存在分类；一般必具分类及所引一般最少箭头必具问题，仍未由本文解决。</p></article><footer><a href="https://mathesis-omega-research.apps.chrono-ai.fun/contribute">Contribute to the mathematics and its formalization</a></footer></body></html>
