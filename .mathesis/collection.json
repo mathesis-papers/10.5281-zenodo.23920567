@@ -1,7 +1,7 @@
 {
   "git_blobs": {
     ".github/workflows/pages.yml": "7879724db1358178aad7e9bed326a44be44f5a6a",
-    ".mathesis/generated.json": "e12565da10acc2a6ffdff467a1263ee18309edb3",
+    ".mathesis/generated.json": "51c034e4684e57feba93a0dd8e89115946109faf",
     "CHANGELOG.md": "c700dae069e80fb2fe188da71d5a5a4613518585",
     "CITATION.cff": "3d56ae7b9498db22c4d04f04d2088f940c9873c4",
     "CONTRIBUTING.md": "ea69168fc2cb506b57b00de1ef588aaf011aa3da",
@@ -14,12 +14,13 @@
     "manuscript/note.tex": "6557f7b3dbbe0ee333c1808cb533a83d99204226",
     "manuscript/verification.json": "1b14c6b7993bc5d559833b0e9a00633f8ac9668c",
     "manuscript/verify.py": "de91ab2465f36187d27e0f0d7fae780117e89a22",
-    "paper.json": "edac89ff0dcd6fe22f07cd1218ce614e476b382b",
+    "paper.json": "8300d32d6de20456d59340588eb8f1f5f834832f",
     "paper.pdf": "6a9151d812c9f269f6aa595a53845c040cd39137",
     "site/en/index.html": "6fb9088417c62c7b9043456dcf5059eb209197fd",
-    "site/index.html": "4192af48a075ae7e99c9b67597a78a0e2b1ff816",
+    "site/index.html": "4440b8e10bfd1094d9152cee33a272a70ea36407",
     "site/mathesis-materials.json": "64daf8501d1784cc4c4ed920d0484ac70237a0df",
     "site/zh/index.html": "bcfec8300ba6374fa6295cc08fe65ef55439bb61",
+    "source.archive": "85beb92e24f431a234c260d6c7a75f6842faa691",
     "versions/v2/.mathesis/generated.json": "e447fb4e707cb41c12bd2856301eaadeb8ff71cb",
     "versions/v2/CHANGELOG.md": "c700dae069e80fb2fe188da71d5a5a4613518585",
     "versions/v2/CITATION.cff": "3d56ae7b9498db22c4d04f04d2088f940c9873c4",
@@ -34,12 +35,13 @@
     "versions/v2/manuscript/verification.json": "1b14c6b7993bc5d559833b0e9a00633f8ac9668c",
     "versions/v2/manuscript/verify.py": "de91ab2465f36187d27e0f0d7fae780117e89a22",
     "versions/v2/paper.json": "accf5ca082ec4e53e58a834b9863c84ee6a4657a",
-    "versions/v2/paper.pdf": "6a9151d812c9f269f6aa595a53845c040cd39137"
+    "versions/v2/paper.pdf": "6a9151d812c9f269f6aa595a53845c040cd39137",
+    "versions/v2/source.archive": "85beb92e24f431a234c260d6c7a75f6842faa691"
   },
   "schema": "mathesis.paper-collection.v1",
   "sha256": {
     ".github/workflows/pages.yml": "f15d983dcb8f324ffdedb50b05f7380e11fda8723d49b5c8f10ef0f414612372",
-    ".mathesis/generated.json": "467b9ccfe3046fb449b72e69c91e3b4898a9fdeea1301a73edb5c5cbda2ae420",
+    ".mathesis/generated.json": "4990fcb4d84c55ac3a94661828f12459af5b7d92e8803d85eafbdd91dc25b7ab",
     "CHANGELOG.md": "487fe3aee3c13e4e5989c1ba64934ea7b74c1bf769907f00cb1d40a02bc64dd1",
     "CITATION.cff": "0b4019d68442248760c75c76d44fd628d67de4e3682e7689d386095638516809",
     "CONTRIBUTING.md": "fafd66e63160b2a88f433af56d2af2b0f7bf6ed2fd417d46b54446ce07c627ff",
@@ -52,12 +54,13 @@
     "manuscript/note.tex": "3484674e1d7a31cd80ce2404c3529d2799414dfd149081c940bf62666be0c12f",
     "manuscript/verification.json": "da9b1ed7f8935551f259b1c1d43e15419d122f1aa083ae6a2f24536e5cff53e9",
     "manuscript/verify.py": "c96dd869b59d824f0d1ad95aef631697e6444af6cc0bdb271df98c0fd3c43808",
-    "paper.json": "c21000d2507aac8b65d951e7a12f0751a5a82272933fc4b72ccd3da3ee5cb0fd",
+    "paper.json": "a07188d2c70c3d9f95c09e7ca2e3e0e6e8f864367bc211ad4c0503f89585e97f",
     "paper.pdf": "f4926754b9bdfa14458a7b888ba5cb54ae24806fb067d0d740685602e5e35062",
     "site/en/index.html": "29c764d97f97a69fdbe2a8bbb6b492dfab01df10b64cd9827cf557d4d866a810",
-    "site/index.html": "d7a8653513f76f85dd33ba1cd64acc50ba6630c71b6d56d7c54138b65c986583",
+    "site/index.html": "4841b9465b2803da3223e7733819cf9c62fa33cbcd971ead8996acef0e421455",
     "site/mathesis-materials.json": "fb0e7fedd67e0a0ca1fd2d6b384900ba97ae6bfc3fb44b85d28ce7c99c8d9e68",
     "site/zh/index.html": "92158998745f5cac3366b23bb79786ca77034499a7ee033a9f87e369c7bbbc07",
+    "source.archive": "96421268e1b7be2fd1d42a02285a6c123bf650b646133daef546dbd00f47d090",
     "versions/v2/.mathesis/generated.json": "69eae6390f46a6b3a9a23d90b807b1a3b469b8aa13c781331ed5d3ed45566680",
     "versions/v2/CHANGELOG.md": "487fe3aee3c13e4e5989c1ba64934ea7b74c1bf769907f00cb1d40a02bc64dd1",
     "versions/v2/CITATION.cff": "0b4019d68442248760c75c76d44fd628d67de4e3682e7689d386095638516809",
@@ -72,7 +75,8 @@
     "versions/v2/manuscript/verification.json": "da9b1ed7f8935551f259b1c1d43e15419d122f1aa083ae6a2f24536e5cff53e9",
     "versions/v2/manuscript/verify.py": "c96dd869b59d824f0d1ad95aef631697e6444af6cc0bdb271df98c0fd3c43808",
     "versions/v2/paper.json": "736c91398a9d0d6d21f7b50cc2571cae01716596b68c1fefe3af915bae1ea951",
-    "versions/v2/paper.pdf": "f4926754b9bdfa14458a7b888ba5cb54ae24806fb067d0d740685602e5e35062"
+    "versions/v2/paper.pdf": "f4926754b9bdfa14458a7b888ba5cb54ae24806fb067d0d740685602e5e35062",
+    "versions/v2/source.archive": "96421268e1b7be2fd1d42a02285a6c123bf650b646133daef546dbd00f47d090"
   },
   "version": 2,
   "work": "koljancic-oblak-2026-question-5-11-even-loop-path"
