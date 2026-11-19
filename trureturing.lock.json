@@ -1,0 +1,25 @@
+{
+  "schema": "trureturing-books.lock.v1",
+  "repo": "the-omega-institute/trureturing",
+  "branch": "dev",
+  "commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+  "pinned_at": "2026-11-08T12:32:04Z",
+  "declarations": {
+    "D5/S3/Combinatorics/SpectralGraph/KoljancicOblakEvenPath.branch_variation_injective": {
+      "module": "D5/S3/Combinatorics/SpectralGraph/KoljancicOblakEvenPath",
+      "name": "D5.S3.Combinatorics.SpectralGraph.KoljancicOblakEvenPath.branch_variation_injective",
+      "kind": "theorem",
+      "statement_id": "sha256:03d74be939b855a75a2a5cffe02a2ea322cd92417bd1037b88378fc6a711cc8f",
+      "line": 113,
+      "signature": "theorem branch_variation_injective (q dq : ℕ → ℝ) (n : ℕ) (hq : ∀ k < n, q k ≠ 0) (h0 : variation q dq n = 0) (h1 : variation q dq (n + 1) = 0) : ∀ k < n, dq k = 0"
+    },
+    "D5/S3/Combinatorics/SpectralGraph/KoljancicOblakEvenPathNSSP.result": {
+      "module": "D5/S3/Combinatorics/SpectralGraph/KoljancicOblakEvenPathNSSP",
+      "name": "D5.S3.Combinatorics.SpectralGraph.KoljancicOblakEvenPathNSSP.result",
+      "kind": "theorem",
+      "statement_id": "sha256:c27d3ee0e0841e83066b5c5fe96b1bb33c5727f8d949ee4fa448859df83e1db6",
+      "line": 504,
+      "signature": "theorem result : D5.S3.Combinatorics.SpectralGraph.KoljancicOblakEvenPath.claim"
+    }
+  }
+}

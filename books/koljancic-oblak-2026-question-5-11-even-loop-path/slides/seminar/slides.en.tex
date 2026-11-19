@@ -1,0 +1,210 @@
+\documentclass{beamer}
+\input{tbook-deck}
+\title{Separating the two branch spectra}
+\author[H. Ma, W. Zhang]{Haobo Ma\inst{1} \and Wenlin Zhang\inst{1,2}}
+\institute{\inst{1}ChronoAI Pte Ltd, Singapore\\\inst{2}National University of Singapore, Singapore}
+\begin{document}
+% Manuscript: Title and abstract
+\begin{frame}{Question and contribution}
+\titlepage
+\note{This talk explains version 2 by Haobo Ma and Wenlin Zhang. The question is which looped double paths allow nSSP. Credit Carptopus for the earlier full criterion; emphasize the explicit integer construction and its mechanism.}
+\end{frame}
+
+% Manuscript: Sections 1--4
+\begin{frame}{Route through the argument}
+\tableofcontents
+\note{Begin with five points, then state the criterion. The proof proceeds through separated branch spectra, first-order recovery of continuants, detection in eigenvector coordinates, and openness to add loops.}
+\end{frame}
+
+\section{Question}
+% Manuscript: Section 3, Lemma 4 and Corollary 5
+\begin{frame}{A successful choice of weights}
+\[
+A=\begin{pmatrix}0&3&0&0&0\\3&0&3&0&0\\0&3&1&1&0\\0&0&1&0&1\\0&0&0&1&0\end{pmatrix}.
+\]
+Delete point $3$: left spectrum $\{-3,3\}$, right spectrum $\{-1,1\}$.
+\begin{alertblock}{Allows versus requires}One successful choice does not mean every choice succeeds.\end{alertblock}
+\note{The nonzero entries are exactly the neighboring arcs in both directions and the loop at point three. Both left edges are $3$ and both right edges are $1$. After deleting the center, only the internal branch edge determines its spectrum. Unit weights give coincident spectra and a failure in the same pattern.}
+\end{frame}
+
+% Manuscript: Section 1, equation (1)
+\begin{frame}{What does the test exclude?}
+Take an arbitrary real matrix $X$:
+\[ A\circ X=0,\qquad AX^{\mathsf T}=X^{\mathsf T}A. \]
+\begin{itemize}
+\item First: $X$ vanishes on the nonzero positions of $A$.
+\item Second: $X^{\mathsf T}$ commutes with $A$.
+\item nSSP means the only solution is $X=0$.
+\end{itemize}
+No symmetry or zero-diagonal assumption on $X$.
+\note{Distinguish entrywise multiplication from matrix multiplication. The quantifier ranges over every real $X$, not just symmetric matrices. A pattern allows nSSP when some matrix with exactly its nonzero positions passes this test.}
+\end{frame}
+
+% Manuscript: Theorem 1, Section 1
+\begin{frame}{The full existence criterion}
+\begin{bookresult}{thm-criterion}
+$P_{n,L}$ allows nSSP exactly when
+\[
+\begin{cases}L\ne\varnothing,&n\text{ even},\\
+L\cap\{1,3,\ldots,n\}\ne\varnothing,&n\text{ odd}.
+\end{cases}
+\]
+Every allowing pattern has a symmetric witness with positive integer nonzero entries.
+\end{bookresult}
+\note{Number vertices $1,\ldots,n$ from an endpoint. On six vertices any loop position works. On five, a sole loop at $2$ cannot work, while one at $3$ can. This classifies existence; requiring every matrix to succeed is a different question.}
+\end{frame}
+
+% Manuscript: Section 1, attribution; bibliography [C]
+\begin{frame}{Question, earlier proof, present construction}
+\begin{itemize}
+\item S. Koljančić, P. Oblak: Question 5.11; odd-order obstruction, Theorem 5.7(Cc).
+\item Carptopus: full criterion and single-loop spectral equivalence, August 2026; Theorems 4.1, 5.2, 6.1.
+\item Haobo Ma, Wenlin Zhang: explicit integer construction, unit-edge arithmetic test, two family classifications.
+\end{itemize}
+\small Earlier proof DOI:10.5281/zenodo.22059007.
+\note{Preserve the manuscript attribution. Carptopus dated the work 19 August and revised it 22 August, covering both parity cases. The full criterion is not presented as first proved by this paper.}
+\end{frame}
+
+\section{Construction}
+% Manuscript: Corollary 5, Section 3
+\begin{frame}{The single-loop spectral criterion}
+\begin{bookresult}{cor-spectral}
+A real symmetric irreducible tridiagonal matrix has exactly one nonzero diagonal entry, at $\ell$:
+\[\text{nSSP}\ \Longleftrightarrow\ \text{disjoint branch spectra}.\]
+For unit edges this is $\gcd(\ell,n+1)=1$.
+\end{bookresult}
+An empty branch has no eigenvalues.
+\note{This concerns a fixed matrix. Edge weights may have either sign but must be nonzero, and the loop is nonzero. A common eigenvalue supplies an eigenvector vanishing at the center and then a nonzero commuting obstruction. Recovery will explain sufficiency.}
+\end{frame}
+
+% Manuscript: Lemma 4, Section 3
+\begin{frame}{Separate the spectra explicitly}
+\begin{bookresult}{lem-separation}
+If at least one of $r,s\geq0$ is even, positive integer edge weights give coprime branch polynomials.
+\end{bookresult}
+Even branch length $d\geq2$: use $M=d+1$ on that side and $1$ on the other.
+\[
+\min |\lambda_{\mathrm{scaled}}|=2(d+1)\sin\frac{\pi}{2(d+1)}>2,
+\]
+\[
+|\lambda_{\mathrm{unit}}|<2.
+\]
+\note{The constant-weight eigenvalues are $2M\cos(j\pi/(d+1))$. Even length excludes zero, so even the two eigenvalues nearest zero move beyond absolute value $2$. An empty branch has polynomial $1$ and is immediate. Give the attachment the same integer weight as its side.}
+\end{frame}
+
+% Manuscript: Section 2, equations (2)--(4)
+\begin{frame}{A recurrence records a branch}
+$q_k=b_k^2$; dots denote first-order variations.
+\[P_0=1,\quad P_1=x,\quad P_{k+2}=xP_{k+1}-q_kP_k.\]
+\[\dot P_{k+2}=x\dot P_{k+1}-\dot q_kP_k-q_k\dot P_k.\]
+\begin{itemize}\item $P_m$ is monic and has parity $m$.
+\item For $m\geq2$, $\deg\dot P_m\leq m-2$; initial variations vanish.
+\end{itemize}
+$U=P_r,\ V=Q_s$, central loop $a\ne0$:
+\[H=P_{r+1}V+UQ_{s+1}-(x+a)UV.\]
+\note{The roots of $P_m$ are the branch eigenvalues. Parameters include the attachment, so recovery uses two consecutive polynomial variations. The displayed degree bound is for $m\geq2$; the initial two variations are zero.}
+\end{frame}
+
+% Manuscript: Lemma 3, Section 2
+\begin{frame}{The loop separates polynomial parities}
+\begin{bookresult}{lem-joined}
+If $a\ne0$, edge parameters are nonzero and $U,V$ are coprime, then $\dot H=0$ forces every parameter variation to vanish.
+\end{bookresult}
+\[ T=\dot UV+U\dot V,\qquad \dot H=W-aT-\dot aUV.\]
+$W$ has the opposite parity to $T,UV$.
+\[\dot a=0\ \Longrightarrow\ T=0\ \Longrightarrow\ \dot U=\dot V=0.\]
+Recover the adjacent polynomials, then descend the recurrence.
+\note{The top coefficient gives $\dot a=0$. Coprimality gives $U\mid\dot U$; the smaller degree forces zero. Repeat for the adjacent polynomials. The written lemma holds for arbitrary $r,s$; the existing joined-recovery Lean statement additionally requires odd $r+s$.}
+\end{frame}
+
+% Manuscript: Section 3, spectral readout argument
+\begin{frame}{From recovery to unrestricted test matrices}
+$O^{\mathsf T}AO=\operatorname{diag}(\lambda_i)$ with distinct eigenvalues.
+\[
+\mathcal S\longrightarrow\mathbb R^n,\qquad B\longmapsto\operatorname{diag}(O^{\mathsf T}BO)
+\]
+$\dim\mathcal S=n$; recovery gives injectivity, hence surjectivity.
+\[Y=O^{\mathsf T}X^{\mathsf T}O=\operatorname{diag}(y_i).\]
+Choose $B$ with spectral diagonal $(y_i)$:
+\[0=\operatorname{tr}(X^{\mathsf T}B)=\sum_i y_i^2.\]
+\note{$\mathcal S$ is the symmetric variation space on the path edges and selected loop. A zero spectral diagonal makes the characteristic derivative zero, so recovery forces $B=0$. The transpose of arbitrary $X$ commutes with the distinct diagonal eigenvalue matrix and is therefore diagonal. Entrywise annihilation gives trace orthogonality; the sum of squares forces zero.}
+\end{frame}
+
+% Manuscript: Section 4, loop enlargement and obstructions
+\begin{frame}{Add loops and identify obstructions}
+\begin{block}{Add loops and retain integrality}
+$D$ is $1$ at the other required loops. For sufficiently large integers $N$,
+\[ A_0+N^{-1}D\text{ has nSSP},\qquad NA_0+D\text{ is integral}.\]
+\end{block}
+\begin{itemize}\item No loops: the obstruction is $X=I$.
+\item Odd order, loops only at even positions: the larger odd part gives left and right nullvectors.
+\end{itemize}
+\note{Full column rank is witnessed by a nonzero maximal minor, giving openness. Nonzero scaling preserves the test kernel. The odd-order obstruction works for nonsymmetric matrices too: take $Au=0$, $v^{\mathsf T}A=0$, and $X=vu^{\mathsf T}$. No formula for the least $N$ is supplied.}
+\end{frame}
+
+\section{Evidence}
+% Manuscript: Corollary 5, unit-edge consequence
+\begin{frame}{Success and failure in one pattern}
+Unit edges and one nonzero loop:
+\[\text{nSSP}\ \Longleftrightarrow\ \gcd(\ell,n+1)=1.\]
+\begin{itemize}\item $n=6,\ell=3$: $\gcd(3,7)=1$, success.
+\item $n=5,\ell=3$: $\gcd(3,6)=3$, failure.
+\item The five-point pattern still succeeds with left weights $3$.
+\end{itemize}
+This tests fixed unit weights; allowing permits a choice of weights.
+\note{A shared unit-branch eigenvalue is equivalent to $j/\ell=k/(n+1-\ell)$. A common interior fraction exists exactly when the two denominators have a common divisor greater than $1$. The loop can have any nonzero value.}
+\end{frame}
+
+% Manuscript: Corollary 6, Section 4
+\begin{frame}{Two families and their boundaries}
+\begin{bookresult}{cor-families}
+\begin{itemize}
+\item Odd $n\geq3$, central loop: allows but does not require for $n\equiv1\pmod4$; cannot allow for $n\equiv3\pmod4$.
+\item All interior loops: allows but does not require for $n\geq4$; cannot allow for $n\leq3$.
+\item One point with a loop requires nSSP.
+\item Directed superpatterns have positive-integer witnesses.
+\end{itemize}
+\end{bookresult}
+\note{The interior-loop failure is explicit. With $C$ the unit path with endpoint loops and $E$ all ones, take $B=I-C$ and $Y=I-E+C$. Then $BY=YB$, $B\circ Y=0$, and $Y\ne0$. Directed superpatterns use the same openness and scaling; the resulting witness may be nonsymmetric.}
+\end{frame}
+
+% Manuscript: Section 5, exact Lean scope
+\begin{frame}{The exact even-order formal statement}
+\begin{bookresult}{thm-even}
+For every positive even $n$ and nonempty $L\subseteq[n]$, a real matrix with exact support $P_{n,L}$ and nSSP exists. The test ranges over all real $X$.
+\end{bookresult}
+This proposition has no added symmetry or integrality conclusion.
+\medskip
+
+The full criterion, odd order and arithmetic consequences have written proofs in the paper and reading chapter.
+\note{This is precisely the even-order existential proposition. Branch recovery also has an exact formal counterpart, shown in the appendix. A symmetric construction used inside a proof does not mean the public proposition states the stronger integer-symmetric conclusion.}
+\end{frame}
+
+\appendix
+\section{Sources}
+% Manuscript: Lemma 2, Section 2
+\begin{frame}{Appendix: backward recovery}
+\begin{bookresult}{lem-branch}
+Let $m\geq0$ and $q_k\ne0$ for $k<m$. If $\dot P_m=\dot P_{m+1}=0$, then $\dot q_k=0$ for every $k<m$.
+\end{bookresult}
+For $m\geq1$,
+\[\dot q_{m-1}P_{m-1}+q_{m-1}\dot P_{m-1}=0.\]
+The top coefficient gives $\dot q_{m-1}=0$. The nonzero parameter gives $\dot P_{m-1}=0$; descend by induction.
+\note{The conclusion is vacuous at $m=0$. At $m=1$ it recovers the attachment parameter $q_0$. The two consecutive polynomials encode the attachment as well.}
+\end{frame}
+
+% Manuscript: Bibliography and Section 5
+\begin{frame}{Appendix: sources and contributions}
+\small
+\begin{itemize}
+\item Present paper, version 2: \href{https://doi.org/10.5281/zenodo.23920568}{10.5281/zenodo.23920568}.
+\item S. Koljančić, P. Oblak: \href{https://doi.org/10.13001/ela.2026.10523}{10.13001/ela.2026.10523}, Question 5.11.
+\item Carptopus: \href{https://doi.org/10.5281/zenodo.22059007}{10.5281/zenodo.22059007}, Theorems 4.1, 6.1.
+\item Precise statements, full proofs and five focused contribution requests are in the reading's source chapter.
+\end{itemize}
+\PinnedCommit
+\note{The source chapter identifies the earlier existence proof and the original question, along with the full manuscript arguments. The formalization contributions can reuse the existing branch differentials.}
+\end{frame}
+
+\FormalVerification
+\end{document}

@@ -1,0 +1,29 @@
+{
+  "duration": "2:56",
+  "id": "001-separated-branches",
+  "lean": [
+    "D5/S3/Combinatorics/SpectralGraph/KoljancicOblakEvenPathNSSP.result"
+  ],
+  "narration": {
+    "engine": "Kokoro-82M v1.0 (onnx)",
+    "language": "en",
+    "voice": "af_heart"
+  },
+  "outputs": {
+    "cover": "koljancic-oblak-2026-question-5-11-even-loop-path_001_cover.jpg",
+    "narrated_720p": "koljancic-oblak-2026-question-5-11-even-loop-path_001_720p_narrated.mp4"
+  },
+  "publication_basis": "pinned",
+  "released": "2026-11-15",
+  "resolution": "1280x720@30",
+  "style": "trureturing cyberpunk · deterministic canvas",
+  "subject": "https://github.com/the-omega-institute/trureturing",
+  "subtitles": [
+    "zh",
+    "en"
+  ],
+  "summary": "A five-point example explains branch spectral separation, first-order recovery, and positive-integer loop enlargement, with exact formal scope and earlier attribution.",
+  "summary_zh": "从五点例子解释支路谱分离、一阶恢复及保持正整数性的添环，明确形式证明范围和早期成果归属。",
+  "title": "Separate the branches, build the path",
+  "title_zh": "分开两条支路，构造一条路径"
+}

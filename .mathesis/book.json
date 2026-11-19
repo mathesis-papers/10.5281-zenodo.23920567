@@ -1,0 +1,86 @@
+{
+  "book": "koljancic-oblak-2026-question-5-11-even-loop-path",
+  "pending_claims": [],
+  "results": {
+    "thm-criterion": {
+      "claim": "collected:koljancic-oblak-2026-question-5-11-even-loop-path:2:s1",
+      "gids": [],
+      "comparison_verdict": "special case",
+      "compared_public_gid": "D5/S3/Combinatorics/SpectralGraph/KoljancicOblakEvenPathNSSP.result",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "formalization_request": {
+        "label": "Theorem 1 — full existence criterion",
+        "url": "https://github.com/the-omega-institute/trureturing-requests/issues/156"
+      }
+    },
+    "thm-even": {
+      "claim": "collected:koljancic-oblak-2026-question-5-11-even-loop-path:2:s1",
+      "gids": [
+        "D5/S3/Combinatorics/SpectralGraph/KoljancicOblakEvenPathNSSP.result"
+      ],
+      "comparison_verdict": "same",
+      "compared_public_gid": "D5/S3/Combinatorics/SpectralGraph/KoljancicOblakEvenPathNSSP.result",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8"
+    },
+    "lem-branch": {
+      "claim": "collected:koljancic-oblak-2026-question-5-11-even-loop-path:2:s2",
+      "gids": [
+        "D5/S3/Combinatorics/SpectralGraph/KoljancicOblakEvenPath.branch_variation_injective"
+      ],
+      "comparison_verdict": "same",
+      "compared_public_gid": "D5/S3/Combinatorics/SpectralGraph/KoljancicOblakEvenPath.branch_variation_injective",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8"
+    },
+    "lem-joined": {
+      "claim": "collected:koljancic-oblak-2026-question-5-11-even-loop-path:2:s3",
+      "gids": [],
+      "comparison_verdict": "special case",
+      "compared_public_gid": "D5/S3/Combinatorics/SpectralGraph/KoljancicOblakEvenPath.joined_variation_injective",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "formalization_request": {
+        "label": "Lemma 3 — general joined recovery",
+        "url": "https://github.com/the-omega-institute/trureturing-requests/issues/154"
+      }
+    },
+    "lem-separation": {
+      "claim": "collected:koljancic-oblak-2026-question-5-11-even-loop-path:2:s4",
+      "gids": [],
+      "comparison_verdict": "variant",
+      "compared_public_gid": "D5/S3/Combinatorics/SpectralGraph/KoljancicOblakEvenPath.coprime_positive_branches",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "formalization_request": {
+        "label": "Lemma 4 — integer branch separation",
+        "url": "https://github.com/the-omega-institute/trureturing-requests/issues/155"
+      }
+    },
+    "cor-spectral": {
+      "claim": "collected:koljancic-oblak-2026-question-5-11-even-loop-path:2:s5",
+      "gids": [],
+      "comparison_verdict": "variant",
+      "compared_public_gid": "D5/S3/Combinatorics/SpectralGraph/KoljancicOblakEvenPath.joined_variation_injective",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "formalization_request": {
+        "label": "Corollary 5 — single-loop equivalence and gcd criterion",
+        "url": "https://github.com/the-omega-institute/trureturing-requests/issues/157"
+      }
+    },
+    "cor-families": {
+      "claim": "collected:koljancic-oblak-2026-question-5-11-even-loop-path:2:s6",
+      "gids": [],
+      "comparison_verdict": "none",
+      "compared_public_gid": null,
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "formalization_request": {
+        "label": "Corollary 6 — loop families and superpatterns",
+        "url": "https://github.com/the-omega-institute/trureturing-requests/issues/158"
+      }
+    }
+  },
+  "stage": "complete",
+  "titles": {
+    "en": "Koljančić–Oblak Question 5.11 (arXiv:2604.21552v1, Section 5): nSSP witnesses for looped double paths",
+    "zh": "Koljančić–Oblak Question 5.11 (arXiv:2604.21552v1, Section 5): nSSP witnesses for looped double paths"
+  },
+  "version": 2,
+  "work": "koljancic-oblak-2026-question-5-11-even-loop-path"
+}

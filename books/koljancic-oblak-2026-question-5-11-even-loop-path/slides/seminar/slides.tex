@@ -1,0 +1,210 @@
+\documentclass{beamer}
+\input{tbook-deck}
+\title{分开两条支路的谱}
+\author[H. Ma, W. Zhang]{Haobo Ma\inst{1} \and Wenlin Zhang\inst{1,2}}
+\institute{\inst{1}ChronoAI Pte Ltd, Singapore\\\inst{2}National University of Singapore, Singapore}
+\begin{document}
+% Manuscript: Title and abstract
+\begin{frame}{题目与贡献}
+\titlepage
+\note{本报告讲解 Haobo Ma 与 Wenlin Zhang 第 2 版论文。问题是哪些带自环的双向路径允许 nSSP。完整判据已有 Carptopus 的早期证明；这里突出明确整数构造及其机制。}
+\end{frame}
+
+% Manuscript: Sections 1--4
+\begin{frame}{报告路线}
+\tableofcontents
+\note{从五点例子开始，再陈述完整判据。证明依次使用分离两支路的谱、continuant 的一阶恢复、谱坐标中的对角检测、开放性添环。}
+\end{frame}
+
+\section{问题与判据}
+% Manuscript: Section 3, Lemma 4 and Corollary 5
+\begin{frame}{一个成功填法}
+\[
+A=\begin{pmatrix}0&3&0&0&0\\3&0&3&0&0\\0&3&1&1&0\\0&0&1&0&1\\0&0&0&1&0\end{pmatrix}.
+\]
+删去点 $3$ 后：左支路谱 $\{-3,3\}$，右支路谱 $\{-1,1\}$。
+\begin{alertblock}{允许与要求}有一个成功填法，不等于每种填法都成功。\end{alertblock}
+\note{矩阵非零项恰在两个方向的邻接弧与第三点的自环。左侧内部边与连接中心的边都是 $3$；右侧两边都是 $1$。删掉中心后，只有内部边决定支路谱。单位边权会让两边谱相同，构成同一个图案中的失败填法。}
+\end{frame}
+
+% Manuscript: Section 1, equation (1)
+\begin{frame}{测试什么}
+取任意实矩阵 $X$：
+\[ A\circ X=0,\qquad AX^{\mathsf T}=X^{\mathsf T}A. \]
+\begin{itemize}
+\item 第一式：$X$ 在 $A$ 的非零位置为零。
+\item 第二式：$X^{\mathsf T}$ 与 $A$ 交换。
+\item 唯一解为 $X=0$，就称 $A$ 有 nSSP。
+\end{itemize}
+$X$ 无须对称，也不预设零对角。
+\note{逐项乘积与矩阵乘积不同。强调量词是所有实矩阵 $X$，不是只检查对称矩阵。路径图案允许 nSSP，是存在一个具有精确非零位置的矩阵通过这个测试。}
+\end{frame}
+
+% Manuscript: Theorem 1, Section 1
+\begin{frame}{完整存在判据}
+\begin{bookresult}{thm-criterion}
+$P_{n,L}$ 允许 nSSP 当且仅当
+\[
+\begin{cases}L\ne\varnothing,&n\text{ 偶},\\
+L\cap\{1,3,\ldots,n\}\ne\varnothing,&n\text{ 奇}.
+\end{cases}
+\]
+允许时有对称、非零项全为正整数的见证。
+\end{bookresult}
+\note{点从端点起编号为 $1,\ldots,n$。六点任意自环都可；五点仅在点 $2$ 有自环不行，在点 $3$ 可以。这是存在性分类；要求所有矩阵成功的分类是不同问题。}
+\end{frame}
+
+% Manuscript: Section 1, attribution; bibliography [C]
+\begin{frame}{原问题与早期证明}
+\begin{itemize}
+\item S. Koljančić、P. Oblak：Question 5.11；奇数阶障碍 Theorem 5.7(Cc)。
+\item Carptopus：完整存在判据与单自环谱刻画，2026 年 8 月；Theorems 4.1、5.2、6.1。
+\item Haobo Ma、Wenlin Zhang：明确整数构造、单位边权算术判据、两个家族分类。
+\end{itemize}
+\small 早期证明 DOI:10.5281/zenodo.22059007。
+\note{保留原文的优先权说明。Carptopus 的工作日期为 8 月 19 日、8 月 22 日修订，包含两个奇偶情形。这里没有把完整判据首次证明归给本论文。}
+\end{frame}
+
+\section{构造与恢复}
+% Manuscript: Corollary 5, Section 3
+\begin{frame}{单自环的谱刻画}
+\begin{bookresult}{cor-spectral}
+实对称不可约三对角矩阵，恰在 $\ell$ 处有非零对角项：
+\[\text{nSSP}\ \Longleftrightarrow\ \text{删点后的两支路谱不相交}.\]
+单位边权时等价于 $\gcd(\ell,n+1)=1$。
+\end{bookresult}
+空支路没有特征值。
+\note{该结论针对固定矩阵。边权可正可负，但不能为零，自环非零。若共同特征值存在，就能拼接出中心坐标为零的特征向量，再构造非零交换矩阵；充分性将在后面用恢复论证解释。}
+\end{frame}
+
+% Manuscript: Lemma 4, Section 3
+\begin{frame}{明确分开两边的谱}
+\begin{bookresult}{lem-separation}
+$r,s\geq0$ 至少一个偶数时，有正整数边权使支路多项式互素。
+\end{bookresult}
+偶支路长 $d\geq2$：该侧所有边取 $M=d+1$；另一侧取 $1$。
+\[
+\min |\lambda_{\mathrm{scaled}}|=2(d+1)\sin\frac{\pi}{2(d+1)}>2,
+\]
+\[
+|\lambda_{\mathrm{unit}}|<2.
+\]
+\note{常边权路径的特征值是 $2M\cos(j\pi/(d+1))$。偶长度使零不在谱中，最靠近零的两个值也能被放大到绝对值大于 $2$。空支路多项式为 $1$，直接处理即可。连接中心的边也选为同侧整数权重。}
+\end{frame}
+
+% Manuscript: Section 2, equations (2)--(4)
+\begin{frame}{递推记录支路}
+$q_k=b_k^2$，点号表示一阶变化。
+\[P_0=1,\quad P_1=x,\quad P_{k+2}=xP_{k+1}-q_kP_k.\]
+\[\dot P_{k+2}=x\dot P_{k+1}-\dot q_kP_k-q_k\dot P_k.\]
+\begin{itemize}\item $P_m$ 首一，奇偶性为 $m$。
+\item 当 $m\geq2$ 时，$\deg\dot P_m\leq m-2$；初始变化为零。
+\end{itemize}
+$U=P_r,\ V=Q_s$，中心自环 $a\ne0$：
+\[H=P_{r+1}V+UQ_{s+1}-(x+a)UV.\]
+\note{$P_m$ 的根就是支路特征值。边参数包括连接中心的边，所以恢复需要连续两个多项式的变化。$m\geq2$ 时使用显示的次数界，$m=0,1$ 的变化直接为零。}
+\end{frame}
+
+% Manuscript: Lemma 3, Section 2
+\begin{frame}{自环分离两种奇偶部分}
+\begin{bookresult}{lem-joined}
+$a\ne0$、边参数非零且 $U,V$ 互素时，$\dot H=0$ 迫使所有参数变化为零。
+\end{bookresult}
+\[ T=\dot UV+U\dot V,\qquad \dot H=W-aT-\dot aUV.\]
+$W$ 与 $T,UV$ 的奇偶性相反。
+\[\dot a=0\ \Longrightarrow\ T=0\ \Longrightarrow\ \dot U=\dot V=0.\]
+再恢复相邻多项式，沿递推向后消去边变化。
+\note{最高次系数给出 $\dot a=0$。互素性给出 $U\mid\dot U$，而变化的次数更低，所以只能为零。对相邻多项式再做一次同样推理。这个书面引理对所有 $r,s$ 成立；现有连接恢复 Lean 声明还要求 $r+s$ 为奇数。}
+\end{frame}
+
+% Manuscript: Section 3, spectral readout argument
+\begin{frame}{从变化恢复到任意测试矩阵}
+$O^{\mathsf T}AO=\operatorname{diag}(\lambda_i)$，特征值互异。
+\[
+\mathcal S\longrightarrow\mathbb R^n,\qquad B\longmapsto\operatorname{diag}(O^{\mathsf T}BO)
+\]
+$\dim\mathcal S=n$；恢复论证给出单射，所以满射。
+\[Y=O^{\mathsf T}X^{\mathsf T}O=\operatorname{diag}(y_i).\]
+选 $B$ 的谱对角为 $(y_i)$：
+\[0=\operatorname{tr}(X^{\mathsf T}B)=\sum_i y_i^2.\]
+\note{$\mathcal S$ 是支撑在路径边及选定自环上的对称变化空间。输出为零使特征多项式导数为零，恢复引理便迫使 $B=0$。任意 $X$ 的转置在特征坐标中与互异对角阵交换，因此自动对角化。逐项消去给出迹正交，最后平方和强迫为零。}
+\end{frame}
+
+% Manuscript: Section 4, loop enlargement and obstructions
+\begin{frame}{添环与不可行情形}
+\begin{block}{添环并保持整数性}
+$D$ 在剩余要求的自环处取 $1$。充分大的整数 $N$ 满足
+\[ A_0+N^{-1}D\text{ 有 nSSP},\qquad NA_0+D\text{ 为整数见证}.\]
+\end{block}
+\begin{itemize}\item 无自环：$X=I$ 是障碍。
+\item 奇数阶、仅偶点有环：较大的奇点部分产生左右核向量。
+\end{itemize}
+\note{满列秩由非零极大子式见证，因此开放性保留 nSSP。非零缩放也保留测试核。奇数阶障碍对非对称矩阵同样成立：$Au=0$、$v^{\mathsf T}A=0$，取 $X=vu^{\mathsf T}$。没有给出最小 $N$ 的公式。}
+\end{frame}
+
+\section{后果与证据}
+% Manuscript: Corollary 5, unit-edge consequence
+\begin{frame}{同一图案中的成功与失败}
+单位边权、单自环：
+\[\text{nSSP}\ \Longleftrightarrow\ \gcd(\ell,n+1)=1.\]
+\begin{itemize}\item $n=6,\ell=3$：$\gcd(3,7)=1$，成功。
+\item $n=5,\ell=3$：$\gcd(3,6)=3$，失败。
+\item 五点例子仍可把左侧权重改成 $3$ 而成功。
+\end{itemize}
+判据测试固定单位权重；允许性则可选择权重。
+\note{单位支路谱中的共同特征值等价于 $j/\ell=k/(n+1-\ell)$。共同真分数存在恰当且仅当两个分母有大于 $1$ 的公因数。自环取任意非零值，结论不变。}
+\end{frame}
+
+% Manuscript: Corollary 6, Section 4
+\begin{frame}{两个家族与边界}
+\begin{bookresult}{cor-families}
+\begin{itemize}
+\item 奇数 $n\geq3$，中心单环：$n\equiv1\pmod4$ 时允许但不要求；$n\equiv3\pmod4$ 时不允许。
+\item 内部点全有环：$n\geq4$ 时允许但不要求；$n\leq3$ 时不允许。
+\item 单点有环要求 nSSP。
+\item 允许路径的有向超图案有正整数见证。
+\end{itemize}
+\end{bookresult}
+\note{内部自环不要求性有明确矩阵：$C$ 为端点有环的单位路径，$E$ 为全一矩阵，取 $B=I-C$、$Y=I-E+C$。$BY=YB$、$B\circ Y=0$ 且 $Y\ne0$。有向超图案用同样的开放性及缩放，新增弧可使见证不对称。}
+\end{frame}
+
+% Manuscript: Section 5, exact Lean scope
+\begin{frame}{精确的偶数阶形式结论}
+\begin{bookresult}{thm-even}
+每个正偶数 $n$、非空 $L\subseteq[n]$，存在具有精确支撑 $P_{n,L}$ 和 nSSP 的实矩阵。测试取遍所有实矩阵 $X$。
+\end{bookresult}
+本形式命题没有附加对称或正整数结论。
+\medskip
+
+完整判据、奇数阶与算术后果的书面证明见原文及阅读章。
+\note{这恰好是偶数阶的存在命题。支路恢复引理也有精确形式对应，附录列出。不要把证明中选择的对称构造误当成公开命题已陈述的对称整数结论。}
+\end{frame}
+
+\appendix
+\section{技术与来源}
+% Manuscript: Lemma 2, Section 2
+\begin{frame}{附录：向后恢复}
+\begin{bookresult}{lem-branch}
+$m\geq0$，$q_k\ne0$ 对每个 $k<m$。若 $\dot P_m=\dot P_{m+1}=0$，则所有 $\dot q_k=0$（$k<m$）。
+\end{bookresult}
+当 $m\geq1$ 时，
+\[\dot q_{m-1}P_{m-1}+q_{m-1}\dot P_{m-1}=0.\]
+比较最高次系数得 $\dot q_{m-1}=0$；非零参数给出 $\dot P_{m-1}=0$，再向下归纳。
+\note{$m=0$ 时结论为空。$m=1$ 时恢复的是连接中心的参数 $q_0$。两个连续多项式包括连接边的信息。}
+\end{frame}
+
+% Manuscript: Bibliography and Section 5
+\begin{frame}{附录：来源与贡献}
+\small
+\begin{itemize}
+\item 本论文第 2 版：\href{https://doi.org/10.5281/zenodo.23920568}{10.5281/zenodo.23920568}。
+\item S. Koljančić、P. Oblak：\href{https://doi.org/10.13001/ela.2026.10523}{10.13001/ela.2026.10523}，Question 5.11。
+\item Carptopus：\href{https://doi.org/10.5281/zenodo.22059007}{10.5281/zenodo.22059007}，Theorems 4.1、6.1。
+\item 精确陈述、完整证明与五项贡献请求见阅读版来源章。
+\end{itemize}
+\PinnedCommit
+\note{来源章列出完整存在判据的早期证明、原问题及本论文的完整论证。形式化贡献可以复用已有的支路微分。}
+\end{frame}
+
+\FormalVerification
+\end{document}

@@ -1,0 +1,46 @@
+{
+  "results": {
+    "thm-criterion": {
+      "comparison_verdict": "special case",
+      "compared_public_gid": "D5/S3/Combinatorics/SpectralGraph/KoljancicOblakEvenPathNSSP.result",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "scope": "The full source Theorem 1 has an iff in both parities and symmetric positive-integer witnesses. result proves precisely positive-even exact-support REAL existence for nonempty L, with unrestricted real test X; neither symmetry nor integrality is in its proposition. Odd-order sufficiency and both obstruction clauses are additional written claims."
+    },
+    "thm-even": {
+      "comparison_verdict": "same",
+      "compared_public_gid": "D5/S3/Combinatorics/SpectralGraph/KoljancicOblakEvenPathNSSP.result",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "scope": "Exact existential part of source Theorem 1 answering Question 5.11: n>0, Even n, arbitrary nonempty L, exact path support and HasNSSP against every real X. Fin n values 0..n-1 correspond to source vertices 1..n. This mapped specialization is stated separately from the broader source theorem and does not inherit its symmetry or integrality conclusions."
+    },
+    "lem-branch": {
+      "comparison_verdict": "same",
+      "compared_public_gid": "D5/S3/Combinatorics/SpectralGraph/KoljancicOblakEvenPath.branch_variation_injective",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "scope": "Source Lemma 2 and branch_variation_injective quantify over arbitrary real q,dq and all m>=0, require q_k !=0 for k<m, and recover dq_k=0 for k<m from variations m and m+1 equal zero. The recurrence definitions agree literally, including the attaching parameter and empty branch. The informal Lean docstring about length one does not override the actual quantified theorem, which recovers dq_0 at length one."
+    },
+    "lem-joined": {
+      "comparison_verdict": "special case",
+      "compared_public_gid": "D5/S3/Combinatorics/SpectralGraph/KoljancicOblakEvenPath.joined_variation_injective",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "scope": "Source Lemma 3 has arbitrary r,s>=0. Frozen joined_variation_injective additionally assumes Odd(r+s), alongside nonzero loop, nonzero branch parameters, coprime continuants and zero first coefficient of the deformed joined polynomial. joined_linearization identifies that coefficient with dot H. joined_path_charpoly_derivative itself allows arbitrary r,s, with squared-edge derivative 2*b*db. Reuse these proofs and generalize parity, rather than requesting a new branch differential."
+    },
+    "lem-separation": {
+      "comparison_verdict": "variant",
+      "compared_public_gid": "D5/S3/Combinatorics/SpectralGraph/KoljancicOblakEvenPath.coprime_positive_branches",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "scope": "Source Lemma 4 allows at least one even branch (including both even and empty) and yields positive INTEGER EDGE weights. coprime_positive_branches assumes Odd(r+s) and yields positive real SQUARED edge parameters, not an integer witness. Its chosen positive scaling is existential. The manuscript fixes M=d+1 and proves the strict spectral gap >2. These differences prevent an exact citation."
+    },
+    "cor-spectral": {
+      "comparison_verdict": "variant",
+      "compared_public_gid": "D5/S3/Combinatorics/SpectralGraph/KoljancicOblakEvenPath.joined_variation_injective",
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "scope": "Source Corollary 5 is an iff for every symmetric irreducible tridiagonal one-loop matrix with arbitrary signed nonzero edges, plus the unit-edge gcd criterion. The closest public recovery declaration supplies part of sufficiency under Odd(r+s), not necessity, arbitrary order or the arithmetic iff. The written proof reuses the generalized recovery and spectral-diagonal bridge, then constructs a nonzero commutant when branch spectra meet. Empty branches and n=1 are included."
+    },
+    "cor-families": {
+      "comparison_verdict": "none",
+      "compared_public_gid": null,
+      "comparison_commit": "8a24ea4e79de962725aab9d9b49cc605fcc211d8",
+      "scope": "Source Corollary 6 combines central/interior-loop allowing and nonrequiring classifications, n=1 requiring, and directed positive-integer superpattern existence. Neither inspected module exposes this complete statement. Even-order result is prerequisite context, not a proof of this corollary. Explicit failure matrices and all small n boundaries are supplied in the written proof; directed enlargement need not preserve symmetry."
+    }
+  }
+}

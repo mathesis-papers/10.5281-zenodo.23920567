@@ -1,0 +1,23 @@
+{
+  "schema": "mathesis.collection-history.v1",
+  "sha256": {
+    "versions/v2/.mathesis/generated.json": "69eae6390f46a6b3a9a23d90b807b1a3b469b8aa13c781331ed5d3ed45566680",
+    "versions/v2/CHANGELOG.md": "487fe3aee3c13e4e5989c1ba64934ea7b74c1bf769907f00cb1d40a02bc64dd1",
+    "versions/v2/CITATION.cff": "0b4019d68442248760c75c76d44fd628d67de4e3682e7689d386095638516809",
+    "versions/v2/CONTRIBUTING.md": "fafd66e63160b2a88f433af56d2af2b0f7bf6ed2fd417d46b54446ce07c627ff",
+    "versions/v2/LICENSES/CC-BY-4.0.txt": "58230517b7895aa219ff46a6ed63e67057a1582fb9ea054b16728a8c13525650",
+    "versions/v2/README.md": "abadfe6510ef3fc9d041593ffea7b890c70e5056fac2b64d7d594f32f16a2d3e",
+    "versions/v2/formalization/nodes.json": "3454f6aed9201c2b8f9fd4627f48535629c4825b188e7e180dc91bc240c1a75a",
+    "versions/v2/manuscript/README.md": "77c0283c09fa310acf842df14c3949163246f242ec4178ada820520c9077b27b",
+    "versions/v2/manuscript/SHA256SUMS": "0372cbc9f7573e00d33c6d35320646841d85a0429ea144ee8ae1180bd27c1c41",
+    "versions/v2/manuscript/metadata.json": "9c0de6346821197f091feb47ed10dcae6e47a0c0401c51e05ad13cf7d8671d86",
+    "versions/v2/manuscript/note.tex": "3484674e1d7a31cd80ce2404c3529d2799414dfd149081c940bf62666be0c12f",
+    "versions/v2/manuscript/verification.json": "da9b1ed7f8935551f259b1c1d43e15419d122f1aa083ae6a2f24536e5cff53e9",
+    "versions/v2/manuscript/verify.py": "c96dd869b59d824f0d1ad95aef631697e6444af6cc0bdb271df98c0fd3c43808",
+    "versions/v2/paper.json": "736c91398a9d0d6d21f7b50cc2571cae01716596b68c1fefe3af915bae1ea951",
+    "versions/v2/paper.pdf": "f4926754b9bdfa14458a7b888ba5cb54ae24806fb067d0d740685602e5e35062",
+    "versions/v2/source.archive": "96421268e1b7be2fd1d42a02285a6c123bf650b646133daef546dbd00f47d090"
+  },
+  "source_commit": "d9f32887e4b6beb0440abff99a20acb909daeda8",
+  "work": "koljancic-oblak-2026-question-5-11-even-loop-path"
+}

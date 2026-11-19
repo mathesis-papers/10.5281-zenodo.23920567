@@ -1,0 +1,199 @@
+{
+  "voice": "af_heart",
+  "speed": 0.96,
+  "say": {
+    "Lean": "Leen",
+    "nSSP": "en ess ess pee"
+  },
+  "music": {
+    "bpm": 80,
+    "progression": "d-minor"
+  },
+  "scenes": [
+    {
+      "id": "question",
+      "name": "PATH AND LOOPS",
+      "lead": 0.7,
+      "tail": 0.7,
+      "music": [
+        0.5,
+        0.15,
+        0.1,
+        0,
+        0
+      ],
+      "lines": [
+        [
+          "Which rows of points can support a matrix with no hidden spectral obstruction? For even order, any nonempty loop set works.",
+          "哪些带自环的路径能支持没有隐藏谱障碍的矩阵？偶数阶只要自环集非空就可以。"
+        ],
+        [
+          "At odd order, at least one loop must occupy an odd position, counting from an endpoint.",
+          "奇数阶则必须至少有一个自环位于从端点起编号为奇数的位置。"
+        ],
+        [
+          "The manuscript credits Carptopus with the earlier full criterion. Here we explain the explicit integer construction.",
+          "原文把完整判据的早期证明归于 Carptopus；这里解释明确的整数构造。"
+        ]
+      ]
+    },
+    {
+      "id": "test",
+      "name": "THE MATRIX TEST",
+      "lead": 0.7,
+      "tail": 0.7,
+      "music": [
+        0.5,
+        0.15,
+        0.1,
+        0,
+        0
+      ],
+      "lines": [
+        [
+          "A matrix records a weight at each arrow and loop, and zero everywhere else. Opposite arrows may have equal weights.",
+          "矩阵在箭头与自环处记录权重，其余位置为零；相反方向的箭头可以取相同权重。"
+        ],
+        [
+          "The property, called nSSP, rules out every nonzero real test matrix that vanishes on these positions and whose transpose commutes with the original matrix.",
+          "nSSP 排除所有非零实测试矩阵：它在这些位置为零，且其转置与原矩阵交换。"
+        ]
+      ]
+    },
+    {
+      "id": "split",
+      "name": "DELETE THE LOOPED POINT",
+      "lead": 0.7,
+      "tail": 0.7,
+      "music": [
+        0.5,
+        0.15,
+        0.1,
+        0,
+        0
+      ],
+      "lines": [
+        [
+          "Take five points with a loop at the center. Removing that point leaves two branches with two points each.",
+          "取五点路径，仅中心有自环；删掉中心后，左右各剩一条两点支路。"
+        ],
+        [
+          "With unit weights, both branches have eigenvalues minus one and one. Their spectra collide, and the matrix fails.",
+          "单位边权使两支路的特征值同为负一和一；两边谱相交，矩阵失败。"
+        ],
+        [
+          "Change the two left weights to three. The branch spectra become minus three and three, versus minus one and one. Now they are disjoint, and the matrix succeeds.",
+          "把左侧两条边改成三，支路谱成为正负三与正负一；谱不相交，矩阵成功。"
+        ]
+      ]
+    },
+    {
+      "id": "scale",
+      "name": "SEPARATE THE SPECTRA",
+      "lead": 0.7,
+      "tail": 0.7,
+      "music": [
+        0.5,
+        0.15,
+        0.1,
+        0,
+        0
+      ],
+      "lines": [
+        [
+          "In general, an admissible loop leaves at least one branch of even length. Such a branch has no zero eigenvalue.",
+          "一般地，可用自环会留下至少一条偶长度支路；它没有零特征值。"
+        ],
+        [
+          "For an even branch of length d, give its edges weight d plus one, and the other side weight one.",
+          "偶支路长为 d 时，该侧边权全取 d 加一，另一侧全取一。"
+        ],
+        [
+          "Every scaled eigenvalue has absolute value greater than two. The other branch stays strictly between minus two and two.",
+          "放大侧特征值的绝对值全大于二；另一侧仍严格位于负二与二之间。"
+        ]
+      ]
+    },
+    {
+      "id": "recover",
+      "name": "RECOVER EVERY CHANGE",
+      "lead": 0.7,
+      "tail": 0.7,
+      "music": [
+        0.5,
+        0.15,
+        0.1,
+        0,
+        0
+      ],
+      "lines": [
+        [
+          "Branch characteristic polynomials follow a recurrence, with only even powers or only odd powers.",
+          "支路特征多项式满足递推，只含偶次项或只含奇次项。"
+        ],
+        [
+          "The nonzero loop separates the equation for zero first-order change into these two parities. Coprime branch polynomials force each branch variation to vanish.",
+          "非零自环把一阶变化为零的方程分成两种奇偶部分；支路多项式互素，迫使各自的变化为零。"
+        ],
+        [
+          "Running the recurrence backward recovers every edge change. In eigenvector coordinates, this detects every commuting test matrix and forces it to be zero.",
+          "沿递推向后恢复每条边的变化；在特征向量坐标中，这能检测每个交换测试矩阵，并迫使它为零。"
+        ]
+      ]
+    },
+    {
+      "id": "enlarge",
+      "name": "ADD THE OTHER LOOPS",
+      "lead": 0.7,
+      "tail": 0.7,
+      "music": [
+        0.5,
+        0.15,
+        0.1,
+        0,
+        0
+      ],
+      "lines": [
+        [
+          "Start with this integer matrix and one loop. Add tiny positive weights at the other required loop positions.",
+          "从这个整数单自环矩阵出发，在其余要求的自环位置加入微小正权重。"
+        ],
+        [
+          "The test is a full-rank linear system, so sufficiently small changes preserve the property.",
+          "测试是一个满秩线性系统，因此充分小的改变保持该性质。"
+        ],
+        [
+          "Choose the new weights as one over a sufficiently large integer N, then multiply everything by N. Every nonzero entry is now a positive integer.",
+          "让新增权重为充分大整数 N 的倒数，再把整体乘以 N；全部非零项便都是正整数。"
+        ]
+      ]
+    },
+    {
+      "id": "scope",
+      "name": "EXACT SCOPE AND CREDIT",
+      "lead": 0.7,
+      "tail": 0.7,
+      "music": [
+        0.5,
+        0.15,
+        0.1,
+        0,
+        0
+      ],
+      "lines": [
+        [
+          "Lean proves exact real existence at every positive even order and every nonempty loop set, testing all real matrices.",
+          "Lean 证明每个正偶数阶与非空自环集都有精确支撑的实数见证，测试取遍全部实矩阵。"
+        ],
+        [
+          "Symmetry, positive integrality, the odd-order extension, and the single-loop spectral equivalence have written proofs in this manuscript.",
+          "对称、正整数性、奇数阶扩展及单自环谱等价关系，在本论文中有书面证明。"
+        ],
+        [
+          "For unit edges, a single loop at position ell succeeds exactly when ell and n plus one are coprime. Allowing one successful matrix does not require every matrix to succeed.",
+          "单位边权时，单环位置 ell 与 n 加一互素恰好保证成功；允许一个成功矩阵不等于要求所有矩阵成功。"
+        ]
+      ]
+    }
+  ]
+}
